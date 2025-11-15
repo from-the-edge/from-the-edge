@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubhanginee Singh, PhD - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        .header-photo {
+            flex-shrink: 0;
+        }
+        
+        .header-photo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #4a90e2;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            color: #666;
+            margin-top: 15px;
+        }
+        
+        .contact-info a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .bio {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #4a90e2;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .entry {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .entry:last-child {
+            border-bottom: none;
+        }
+        
+        .entry h3 {
+            color: #34495e;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+        }
+        
+        .entry .meta {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .entry .details {
+            color: #555;
+        }
+        
+        .entry ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .entry li {
+            margin-bottom: 5px;
+        }
+        
+        .publication-link {
+            color: #4a90e2;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        
+        .publication-link:hover {
+            text-decoration: underline;
+        }
+        
+        nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 100;
+        }
+        
+        nav a {
+            color: #4a90e2;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background: #4a90e2;
+            color: white;
+        }
+        
+        .edit-mode {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .edit-mode textarea {
+            width: 100%;
+            min-height: 400px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .edit-mode button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        
+        .edit-mode button:hover {
+            background: #357abd;
+        }
+        
+        .toggle-edit {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 5px 20px rgba(74, 144, 226, 0.4);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .toggle-edit:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 25px rgba(74, 144, 226, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .header-photo img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="editMode" class="edit-mode" style="display: none;">
+            <h2>Edit Portfolio Data</h2>
+            <p style="margin-bottom: 15px; color: #666;">Paste your CV data in JSON format below and click Update:</p>
+            <textarea id="dataInput"></textarea>
+            <button onclick="updatePortfolio()">Update Portfolio</button>
+        </div>
+        
+        <div id="portfolioContent"></div>
+    </div>
+    
+    <button class="toggle-edit" onclick="toggleEdit()">✏️ Edit Data</button>
+    
+    <script>
+        const defaultData = {
+            name: "Shubhanginee Singh, PhD",
+            photo: "https://via.placeholder.com/180",
+            contact: {
+                institution: "Tallinn University",
+                phone: "(+91)9717875038",
+                email: "Shubh@tlu.ee"
+            },
+            bio: "I am a Postdoctoral Research Fellow at the School of Humanities, Tallinn University where I am working on my project Memory, Everyday Bordering Experiences and Tourism. The project is supported by the Mobilitas Incoming Postdoctoral Grant awarded by the Estonian Research Council (ETAG) within the framework of the Marie Sklodowska-Curie Actions Postdoctoral Fellowship (MSCA-PF) programme. Previously, I was working as an Assistant Professor at National Law University Odisha, with academic specialisation in citizenship and border studies in Northeast India, and focussed on identity and resource politics, infrastructure development, and governance issues.",
+            appointments: [
+                {
+                    title: "Research Fellow",
+                    institution: "Centre for Landscape and Culture, Tallinn University",
+                    period: "2025–Present",
+                    details: []
+                },
+                {
+                    title: "Assistant Professor Political Science",
+                    institution: "National Law University Odisha, India",
+                    period: "2023–Present",
+                    details: [
+                        "Teaching courses on Political Theory, Law and Society, and Contemporary Indian Politics",
+                        "Co-Director, Centre for Child Rights (Sep 2024)",
+                        "Co-Director, Centre for Public Health Law (Jul 2023)",
+                        "Faculty Advisor, Health and Wellness Committee (Apr 2024)",
+                        "Faculty Advisor, Anti-Discrimination Cell (Apr 2024)",
+                        "Faculty Advisor, International Law and Policy Society (2023–2024)"
+                    ]
+                },
+                {
+                    title: "Assistant Professor (Visiting) Political Science",
+                    institution: "Dr. B.R. Ambedkar National Law University, India",
+                    period: "2022–2023",
+                    details: [
+                        "Taught Political Theory, Indian Political Thought, Western Political Thought, and Indian Politics."
+                    ]
+                }
+            ],
+            education: [
+                {
+                    degree: "PhD Political Science",
+                    institution: "Jawaharlal Nehru University, New Delhi",
+                    period: "2018–2024",
+                    thesis: "Governing Borderlands: State, Communities, and Border Management in Arunachal Pradesh",
+                    advisor: "Prof. Anupama Roy"
+                },
+                {
+                    degree: "M.Phil. Political Science",
+                    institution: "JNU, New Delhi",
+                    period: "2016–2018",
+                    thesis: "Differentiated citizenship in the protected areas of Northeast India: A study of Arunachal Pradesh",
+                    advisor: "Prof. Anupama Roy",
+                    grade: "78.8%"
+                },
+                {
+                    degree: "M.A. Political Science",
+                    institution: "Kirori Mal College, University of Delhi",
+                    period: "2014–2016",
+                    grade: "60.2%"
+                },
+                {
+                    degree: "B.A. (Hons) Political Science",
+                    institution: "Miranda House, University of Delhi",
+                    period: "2011–2014",
+                    grade: "69.5%"
+                }
+            ],
+            publications: [
+                {
+                    citation: "Singh, S. (2024). The politics of belonging in Arunachal Pradesh: rules of exclusion and differentiated citizenship. Asian Ethnicity, Routledge, 1–26",
+                    link: "https://doi.org/10.1080/14631369.2024.2383931"
+                },
+                {
+                    citation: "Singh, S. (2023). Border Humanitarians: Gendered Order and Insecurity on the Thai-Burmese Frontier, Journal of Borderlands Studies, Routledge, 39(2), 381–383.",
+                    link: "https://doi.org/10.1080/08865655.2023.2289126"
+                },
+                {
+                    citation: "Singh, S. (2025). Peaceful borders. In Oxford Intersections: Borders, OUP (Under review).",
+                    link: ""
+                },
+                {
+                    citation: "Singh, S. (2025). Urban Landscapes and Memory—A Review of Competing Memories of European Border Towns, Journal of Borderlands Studies (Forthcoming).",
+                    link: ""
+                },
+                {
+                    citation: "Singh, S. (2022). Development strategies of the Indian state in the Himalayan Borderlands of Arunachal Pradesh, Journal of Asiatic Society for Social Science Research, Vol. 4, Issue 2.",
+                    link: ""
+                }
+            ],
+            awards: [
+                "Awarded Incoming Postdoctoral Grant for 2025 by Estonian Research Council",
+                "Awarded UGC-DAAD Indo-German Partnership Scholarship, for attending summer school in Institute of Political Science and Sociology, University of Wurzburg, Germany (2018).",
+                "Awarded UGC Junior Research Fellowship (JRF/SRF), during MPhil and PhD (2016–2024) for research support.",
+                "University Rank Holder, B.A. (Hons) Political Science, Miranda House, University of Delhi (2011).",
+                "Certificate of Merit, awarded by CBSE for top 0.1% of candidates nationwide (2011)."
+            ]
+        };
+        
+        let portfolioData = defaultData;
+        
+        function renderPortfolio() {
+            const content = document.getElementById('portfolioContent');
+            
+            let html = `
+                <header>
+                    <div class="header-content">
+                        <h1>${portfolioData.name}</h1>
+                        <div class="contact-info">
+                            ${portfolioData.contact.institution}, ${portfolioData.contact.phone}<br>
+                            <a href="mailto:${portfolioData.contact.email}">${portfolioData.contact.email}</a>
+                        </div>
+                    </div>
+                    <div class="header-photo">
+                        <img src="${portfolioData.photo}" alt="${portfolioData.name}">
+                    </div>
+                </header>
+                
+                <nav>
+                    <a href="#bio">About</a>
+                    <a href="#appointments">Appointments</a>
+                    <a href="#education">Education</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#awards">Awards</a>
+                </nav>
+                
+                <div id="bio" class="bio">
+                    <p>${portfolioData.bio}</p>
+                </div>
+                
+                <div id="appointments" class="section">
+                    <h2>Appointments</h2>
+                    ${portfolioData.appointments.map(app => `
+                        <div class="entry">
+                            <h3>${app.title}</h3>
+                            <div class="meta">${app.institution} | ${app.period}</div>
+                            ${app.details.length > 0 ? `
+                                <ul>
+                                    ${app.details.map(d => `<li>${d}</li>`).join('')}
+                                </ul>
+                            ` : ''}
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div id="education" class="section">
+                    <h2>Education</h2>
+                    ${portfolioData.education.map(edu => `
+                        <div class="entry">
+                            <h3>${edu.degree}</h3>
+                            <div class="meta">${edu.institution} | ${edu.period}</div>
+                            <div class="details">
+                                ${edu.thesis ? `<p><strong>Thesis:</strong> ${edu.thesis}</p>` : ''}
+                                ${edu.advisor ? `<p><strong>Advisor:</strong> ${edu.advisor}</p>` : ''}
+                                ${edu.grade ? `<p><strong>Grade:</strong> ${edu.grade}</p>` : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div id="publications" class="section">
+                    <h2>Selected Publications</h2>
+                    ${portfolioData.publications.map(pub => `
+                        <div class="entry">
+                            <p>${pub.citation}</p>
+                            ${pub.link ? `<a href="${pub.link}" class="publication-link" target="_blank">View Publication →</a>` : ''}
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div id="awards" class="section">
+                    <h2>Awards and Honors</h2>
+                    ${portfolioData.awards.map(award => `
+                        <div class="entry">
+                            <p>${award}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            content.innerHTML = html;
+        }
+        
+        function toggleEdit() {
+            const editMode = document.getElementById('editMode');
+            const portfolioContent = document.getElementById('portfolioContent');
+            
+            if (editMode.style.display === 'none') {
+                editMode.style.display = 'block';
+                portfolioContent.style.display = 'none';
+                document.getElementById('dataInput').value = JSON.stringify(portfolioData, null, 2);
+            } else {
+                editMode.style.display = 'none';
+                portfolioContent.style.display = 'block';
+            }
+        }
+        
+        function updatePortfolio() {
+            try {
+                const newData = JSON.parse(document.getElementById('dataInput').value);
+                portfolioData = newData;
+                renderPortfolio();
+                toggleEdit();
+                alert('Portfolio updated successfully!');
+            } catch (e) {
+                alert('Error parsing JSON: ' + e.message);
+            }
+        }
+        
+        // Initial render
+        renderPortfolio();
+    </script>
+</body>
+</html>
