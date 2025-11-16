@@ -2,7 +2,7 @@
 
 I am a **Postdoctoral Research Fellow** at the School of Humanities, **Tallinn University**.
 
-- 🔭 **Current Project:** I am working on *"Memory, Everyday Bordering Experiences and Tourism"*, a project supported by the Mobilitas Incoming Postdoctoral Grant (Marie Sklodowska-Curie Actions framework).
+- 🔭 I am working on *"Memory, Everyday Bordering Experiences and Tourism"*, a project supported by the Mobilitas Incoming Postdoctoral Grant (Marie Sklodowska-Curie Actions framework).
 
 - 🎓 **Academic Background:**
   - **PhD in Political Science**, Jawaharlal Nehru University (JNU), New Delhi.
@@ -17,4 +17,4 @@ I am a **Postdoctoral Research Fellow** at the School of Humanities, **Tallinn U
 ### 📫 How to reach me
 
 - **Email:** [Shubh@tlu.ee](mailto:Shubh@tlu.ee)
-- **Personal Website:** [from-the-edge.github.io](https://from-the-edge.github.io)
+- **Personal Website:** [from-the-edge.github.io](https://from-the-edge.github.io/from-the-edge/)
